@@ -8,6 +8,7 @@
             <column name="ID" />
             <generator class="assigned" />
         </id>
+        
        
            <property name="descripction" type="java.lang.String">
             <column name="DESCRIPCTION" />
