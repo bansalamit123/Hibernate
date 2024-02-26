@@ -1,29 +1,26 @@
-package com.rays.criteria;
+package com.rays.named;
 
 import java.util.Iterator;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.classic.Session;
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Restrictions;
 
 import com.rays.dto.UserDTO;
 
-public class TestDetachedCriteria {
+public class TestNamedQuerry {
 
 	public static void main(String[] args) {
-
-		DetachedCriteria dc = DetachedCriteria.forClass(UserDTO.class);
-
-		dc.add(Restrictions.eq("firstName", "amit"));
 
 		SessionFactory sf = new Configuration().configure().buildSessionFactory();
 
 		Session session = sf.openSession();
 
-		List<UserDTO> list = dc.getExecutableCriteria(session).list();
+		Query q = session.getNamedQuery("allUser");
+
+		List list = q.list();
 
 		Iterator it = list.iterator();
 
@@ -38,10 +35,9 @@ public class TestDetachedCriteria {
 			System.out.print("\t" + dto.getPassword());
 			System.out.print("\t" + dto.getDob());
 			System.out.println("\t" + dto.getAddress());
+
 		}
 		session.close();
 	}
-	
-	
 
 }

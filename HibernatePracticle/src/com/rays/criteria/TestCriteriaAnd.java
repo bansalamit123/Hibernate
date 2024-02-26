@@ -26,7 +26,7 @@ public class TestCriteriaAnd {
 
 		criteria.add(Restrictions.like("firstName", "a%"));
 
-		criteria.add(Restrictions.like("lastName", "x%"));
+		criteria.add(Restrictions.like("lastName", "b%"));
 
 		List list = criteria.list();
 

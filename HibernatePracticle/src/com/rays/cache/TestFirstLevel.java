@@ -26,7 +26,7 @@ public class TestFirstLevel {
 		System.out.print("\t" + dto1.getDob());
 		System.out.println("\t" + dto1.getAddress());
 		
-		  session.evict(dto1);
+		/* session.evict(dto1); */
 		  
 		  UserDTO dto2 = (UserDTO) session.get(UserDTO.class, 1);
 		  
