@@ -7,12 +7,12 @@ import java.util.List;
 
 public class TestUserDTO1 {
 	public static void main(String[] args) throws Exception {
-		//testAdd();
+		testAdd();
 		//testUpdate();
 		//testDelete();
 		// testGet();
 		//testAuth();
-		  testSearch();
+		  //testSearch();
 		
 		
 	}
